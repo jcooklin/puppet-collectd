@@ -13,7 +13,8 @@ class collectd::configure (
 	$network_username = "",
 	$network_password = "",
 	$mysql_user = $collectd::params::mysql_user,
-	$mysql_password = $collectd::params::mysql_password
+	$mysql_password = $collectd::params::mysql_password,
+	$types_dbs = []
 ) inherits collectd::params {
 
 	# Configuration derived from the parameters above
