@@ -158,7 +158,7 @@ LoadPlugin network
 #LoadPlugin nfs
 <% end -%>
 <% if plugins.include? "nginx" -%>
-#LoadPlugin nginx
+LoadPlugin nginx
 <% end -%>
 <% if plugins.include? "notify_desktop" -%>
 #LoadPlugin notify_desktop
@@ -711,15 +711,19 @@ LoadPlugin vmem
 
 <% end -%>
 <% if plugins.include? "nginx" -%>
-# TODO: support parameters here
-#<Plugin nginx>
-#	URL "http://localhost/status?auto"
-#	User "www-user"
-#	Password "secret"
+<Plugin nginx>
+	URL "<%= nginx_url %>"
+<% if "" != nginx_user -%>
+	User "<%= nginx_user %>"
+<% end -%>
+<% if "" != nginx_password -%>
+	Password "<%= nginx_password %>"
+<% end -%>
+# TODO: support additional parameters
 #	VerifyPeer false
 #	VerifyHost false
 #	CACert "/etc/ssl/ca.crt"
-#</Plugin>
+</Plugin>
 
 <% end -%>
 <% if plugins.include? "notify_desktop" -%>

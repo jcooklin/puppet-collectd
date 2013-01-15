@@ -14,6 +14,9 @@ class collectd::configure (
 	$network_password = "",
 	$mysql_user = $collectd::params::mysql_user,
 	$mysql_password = $collectd::params::mysql_password,
+	$nginx_url = $collectd::params::nginx_url,
+	$nginx_user = $collectd::params::nginx_user,
+	$nginx_password = $collectd::params::nginx_password,
 	$types_dbs = []
 ) inherits collectd::params {
 
